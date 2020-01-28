@@ -11,12 +11,16 @@
 - [License](#License)       
 
 ## About-Process    <div>  
-  
+Basic SQL process that backups all databases using sp_msforeachdb:
   ---
 ## SQL-Logic
 ```SQL
-using sp_msforeachdb:
-sp_msforeachdb 'BACKUP DATABASE ? TO DISK = "\\MyShare\Backup\?.bak" WITH FORMAT'
+
+exec master..sp_msforeachdb 
+'if (''?'') not in (''tempdb'')
+  begin
+    BACKUP DATABASE ? TO DISK = "\\MyFolder\?.bak" WITH FORMAT';
+  end'
 ```
 here's another one.
 even though these kinds of scripts aren't difficult to produce
