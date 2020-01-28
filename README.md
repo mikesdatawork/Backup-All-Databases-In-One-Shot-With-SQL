@@ -10,8 +10,8 @@
 - [Author](#Author)  
 - [License](#License)       
 
-## About-Process <div>  
-Basic SQL process that backups all databases using sp_msforeachdb:
+## About-Process
+  Basic SQL process that backups all databases using sp_msforeachdb:
   ---
 ## SQL-Logic
 ```SQL
